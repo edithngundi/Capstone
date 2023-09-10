@@ -13,6 +13,12 @@ public class PlayerController : MonoBehaviour
     // Defines the character's forward racing speed
     public float racingSpeed;
 
+    // Defines the position of the track: 0 Left, 1 Middle, 2 Right
+    private int positionOnTrack = 1;
+
+    // Defines the distance between these positions
+    public float distanceBetween = 5;
+
     /// <summary>
     /// This method is called when the game starts before the first frame update
     /// </summary>
@@ -26,6 +32,36 @@ public class PlayerController : MonoBehaviour
     {
         // Sets player's speed
         movementDirection.z = racingSpeed;
+
+        // Movement to the right
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            positionOnTrack++;
+            if (positionOnTrack == 3)
+                positionOnTrack = 2;
+        }
+        // Movement to the left
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            positionOnTrack--;
+            if (positionOnTrack == -1)
+                positionOnTrack = 0;
+        }
+
+        // Calculate future positions
+        Vector3 futurePosition = transform.position.z * transform.forward + transform.position.y * transform.up;
+        // Move to the right
+        if (positionOnTrack == 0)
+        {
+            futurePosition += Vector3.left * distanceBetween;
+        }
+        // Move to the left
+        if (positionOnTrack == 2)
+        {
+            futurePosition += Vector3.right * distanceBetween;
+        }
+        // Smoothen the transition in movement
+        transform.position = Vector3.Lerp(transform.position, futurePosition, 80*Time.fixedDeltaTime);
     }
 
     /// <summary>
