@@ -239,6 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330585546}
   - component: {fileID: 330585545}
+  - component: {fileID: 330585548}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   m_Layer: 0
@@ -265,8 +266,8 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.019532714, g: 0.019090425, b: 0.3679245, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -366,6 +367,19 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dff8f468628e4a5b98976d02956f8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 987714553}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978a234c34614198b4dd8ff22eb28ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  racingSpeed: 10
+  racingSpeed: 5
+  distanceBetween: 3.5
 --- !u!136 &987714555
 CapsuleCollider:
   m_ObjectHideFlags: 0
