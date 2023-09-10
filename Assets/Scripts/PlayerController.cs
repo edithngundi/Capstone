@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     // Defines the character's direction
     private Vector3 movementDirection;
 
-    // Defines the forward racing speed
+    // Defines the character's forward racing speed
     public float racingSpeed;
 
     /// <summary>
