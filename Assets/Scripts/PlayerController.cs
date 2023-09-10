@@ -19,6 +19,12 @@ public class PlayerController : MonoBehaviour
     // Defines the distance between these positions
     public float distanceBetween = 5;
 
+    // Defines the upward jump force
+    public float upwardJumpForce;
+
+    // Defines the gravity on the player
+    public float gravity = -20;
+
     /// <summary>
     /// This method is called when the game starts before the first frame update
     /// </summary>
@@ -32,6 +38,23 @@ public class PlayerController : MonoBehaviour
     {
         // Sets player's speed
         movementDirection.z = racingSpeed;
+
+        // Prevent mid-air jumps
+        if(characterController.isGrounded)
+        {
+            // No gravity when grounded
+            movementDirection.y = -1;
+            // Movement up
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                CharacterJump();
+            }
+        }
+        else
+        {
+            // Player is affected by gravity
+            movementDirection.y += gravity * Time.deltaTime;
+        }
 
         // Movement to the right
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -71,5 +94,13 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         characterController.Move(movementDirection * Time.fixedDeltaTime);
+    }
+
+    /// <summary>
+    /// This method makes the player jump
+    /// </summary>
+    private void CharacterJump()
+    {
+        movementDirection.y  = upwardJumpForce;
     }
 }
