@@ -19,6 +19,12 @@ public class BridgeTileManager : MonoBehaviour
     // Defines the player's position
     public Transform playerTransform;
 
+    // Defines the list of spawned tiles
+    private List<GameObject> spawns = new List<GameObject>();
+
+    // Defines a buffer distance to prevent the player from falling off at the start 
+    private int buffer = 35;
+
     /// <summary>
     /// This method is called when the game starts before the first frame update
     /// </summary>
@@ -27,8 +33,10 @@ public class BridgeTileManager : MonoBehaviour
         // Generate the road tiles
         for(int tile = 0; tile < numberOfRoadTiles; tile++)
         {
+            // Instantiate RoadTile1 at start
             if (tile == 0)
                 TileSpawner(0);
+            // Choose at random
             else
                 TileSpawner(Random.Range(0, roadTilePefabs.Length));
         }
@@ -39,12 +47,13 @@ public class BridgeTileManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        //
-        if (playerTransform.position.z > spawnPosition - (numberOfRoadTiles * roadTileLength))
+        // Checks if the player has moved far enough to warrant spawning new road tiles
+        if (playerTransform.position.z - buffer > spawnPosition - (numberOfRoadTiles * roadTileLength))
         {
             TileSpawner(Random.Range(0, roadTilePefabs.Length));
-        }
-        
+            // Delete stale tiles
+            DeleteRoadTile();
+        }       
     }
 
     /// <summary>
@@ -53,8 +62,20 @@ public class BridgeTileManager : MonoBehaviour
     public void TileSpawner(int roadTileIndex)
     {
         // Spawn the road tiles
-        Instantiate(roadTilePefabs[roadTileIndex], transform.forward * spawnPosition, transform.rotation);
+        GameObject spawn = Instantiate(roadTilePefabs[roadTileIndex], transform.forward * spawnPosition, transform.rotation);
+        // Add them to the list of spawned tiles
+        spawns.Add(spawn);
         // Ensure the next tile is spawned near the previous one
         spawnPosition += roadTileLength;
+    }
+
+    /// <summary>
+    /// This method deletes a road tile
+    /// </summary>
+    private void DeleteRoadTile()
+    {
+        // Destroy and delete the tile at the first index of spawns
+        Destroy(spawns[0]);
+        spawns.RemoveAt(0);
     }
 }
