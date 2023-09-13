@@ -428,6 +428,10 @@ MonoBehaviour:
   - {fileID: 2640017767411457978, guid: 86c1a456084cb496fa3a6a36d5773fa5, type: 3}
   - {fileID: 6693693135801343277, guid: 21388e0bcb0754e499dd87d837dc25c0, type: 3}
   - {fileID: 2664808436766731847, guid: 30c3e555310124aec81d19b006665689, type: 3}
+  spawnPosition: 0
+  roadTileLength: 30
+  numberOfRoadTiles: 6
+  playerTransform: {fileID: 987714558}
 --- !u!4 &519795697
 Transform:
   m_ObjectHideFlags: 0
