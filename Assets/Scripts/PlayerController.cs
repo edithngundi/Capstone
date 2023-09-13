@@ -33,7 +33,9 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// This method is called once per frame
+    /// </summary>
     void Update()
     {
         // Sets player's speed
