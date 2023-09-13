@@ -86,7 +86,16 @@ public class PlayerController : MonoBehaviour
             futurePosition += Vector3.right * distanceBetween;
         }
         // Smoothen the transition in movement
-        transform.position = Vector3.Lerp(transform.position, futurePosition, 80*Time.fixedDeltaTime);
+        if (transform.position == futurePosition)
+            return;
+
+        Vector3 difference = futurePosition - transform.position;
+        Vector3 direction = difference.normalized * 25 * Time.deltaTime;
+
+        if (direction.sqrMagnitude < difference.sqrMagnitude)
+            characterController.Move(direction);
+        else
+            characterController.Move(difference);
     }
 
     /// <summary>
