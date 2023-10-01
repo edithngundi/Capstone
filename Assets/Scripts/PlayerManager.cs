@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.UI;
+using TMPro;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -19,6 +21,10 @@ public class PlayerManager : MonoBehaviour
     // Defines the number of coins collected
     public static int coinsCollected;
 
+    // Defines the coins collected text
+    //public Text coinsText;
+    public TextMeshProUGUI coinsCollectedText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +38,7 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Update the coins text with the coins collected
+        coinsCollectedText.text = "Coins:" + coinsCollected;        
     }
 }
