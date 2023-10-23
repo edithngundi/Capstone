@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
     private void CharacterJump()
     {
         movementDirection.y  = upwardJumpForce;
+        characterController.Move(movementDirection * Time.fixedDeltaTime);
     }
 
 }
