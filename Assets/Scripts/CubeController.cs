@@ -5,11 +5,9 @@ using UnityEngine;
 public class CubeController : MonoBehaviour
 {
     // Starting speed of the cube obstraction
-    public float speed = 1f;
-    // Direction of the cube movement
-    public float direction = 1f;
+    private float speed = 10f;
     // Slider distance that the cube traverses from origin to left and right
-    public int distance = 20;
+    private int distance = 10;
     // Check to determine if the cube is moving right or left
     private bool movingRight = true;
     // Starting position of the cube
@@ -24,13 +22,13 @@ public class CubeController : MonoBehaviour
     private void Update()
     {
         // Check if the cube is moving right and has reached the end of the slider
-        if (movingRight && transform.position.x == startPosition.x + distance)
+        if (movingRight && transform.position.x >= startPosition.x + distance)
         {
             // Change the direction of the cube to left
             movingRight = false;
         }
         // Check if the cube is moving left and has reached the end of the slider
-        else if (!movingRight && transform.position.x == startPosition.x - distance)
+        else if (!movingRight && transform.position.x <= startPosition.x - distance)
         {
             // Change the direction of the cube to right
             movingRight = true;
@@ -49,7 +47,7 @@ public class CubeController : MonoBehaviour
         }
 
         // Update the position based on the movement of the cube
-        transform.position += new Vector3(direction * speed, 0f, 0f);
+        transform.position += new Vector3(direction * speed * Time.deltaTime, 0f, 0f);
     }
 
     private void OnCollisionEnter(Collision collision)
