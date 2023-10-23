@@ -14,7 +14,7 @@ public class TileManager : MonoBehaviour
     public float tileLength = 30;
 
     // Defines the number of tile prefabs
-    public int numberOfTiles = 4;
+    public int numberOfTiles = 6;
 
     // Defines the player's position
     public Transform playerTransform;
