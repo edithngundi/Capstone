@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
             characterController.Move(direction);
         else
             characterController.Move(difference);
+
     }
 
     /// <summary>
@@ -114,4 +115,5 @@ public class PlayerController : MonoBehaviour
     {
         movementDirection.y  = upwardJumpForce;
     }
+
 }

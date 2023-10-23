@@ -25,9 +25,6 @@ public class Coin : MonoBehaviour
             // Increase the number of coins collected
             PlayerManager.coinsCollected += 1;
 
-            // In the meantime -- use this to report the number of coins collected
-            Debug.Log("Coins:" + PlayerManager.coinsCollected);
-
             // Destroy the coin
             Destroy(gameObject);
         }

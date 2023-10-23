@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoadTileManager : MonoBehaviour
+public class TileManager : MonoBehaviour
 {
-    // List of the different types of road tiles
-    public GameObject[] roadTilePefabs;
+    // List of the different types of tiles
+    public GameObject[] tilePefabs;
 
-    // Defines the z-position where the road tiles are spawned
+    // Defines the z-position where the tiles are spawned
     public float spawnPosition = 0;
 
     // Defines the length of the road tile
-    public float roadTileLength = 30;
+    public float tileLength = 30;
 
-    // Defines the number of road tile prefabs
-    public int numberOfRoadTiles = 6;
+    // Defines the number of tile prefabs
+    public int numberOfTiles = 4;
 
     // Defines the player's position
     public Transform playerTransform;
@@ -30,15 +30,15 @@ public class RoadTileManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        // Generate the road tiles
-        for(int tile = 0; tile < numberOfRoadTiles; tile++)
+        // Generate the tiles
+        for(int tile = 0; tile < numberOfTiles; tile++)
         {
-            // Instantiate RoadTile1 at start
+            // Instantiate Tile1 at start
             if (tile == 0)
-                RoadTileSpawner(0);
+                TileSpawner(0);
             // Choose at random
             else
-                RoadTileSpawner(Random.Range(0, roadTilePefabs.Length));
+                TileSpawner(Random.Range(0, tilePefabs.Length));
         }
     }
 
@@ -47,32 +47,32 @@ public class RoadTileManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        // Checks if the player has moved far enough to warrant spawning new road tiles
-        if (playerTransform.position.z - buffer > spawnPosition - (numberOfRoadTiles * roadTileLength))
+        // Checks if the player has moved far enough to warrant spawning new tiles
+        if (playerTransform.position.z - buffer > spawnPosition - (numberOfTiles * tileLength))
         {
-            RoadTileSpawner(Random.Range(0, roadTilePefabs.Length));
+            TileSpawner(Random.Range(0, tilePefabs.Length));
             // Delete stale tiles
-            DeleteRoadTile();
+            DeleteTile();
         }       
     }
 
     /// <summary>
-    /// This method instantiates new road tiles
+    /// This method instantiates new tiles
     /// </summary>
-    public void RoadTileSpawner(int roadTileIndex)
+    public void TileSpawner(int tileIndex)
     {
         // Spawn the road tiles
-        GameObject spawn = Instantiate(roadTilePefabs[roadTileIndex], transform.forward * spawnPosition, transform.rotation);
+        GameObject spawn = Instantiate(tilePefabs[tileIndex], transform.forward * spawnPosition, transform.rotation);
         // Add them to the list of spawned tiles
         spawns.Add(spawn);
         // Ensure the next tile is spawned near the previous one
-        spawnPosition += roadTileLength;
+        spawnPosition += tileLength;
     }
 
     /// <summary>
-    /// This method deletes a road tile
+    /// This method deletes a tile
     /// </summary>
-    private void DeleteRoadTile()
+    private void DeleteTile()
     {
         // Destroy and delete the tile at the first index of spawns
         Destroy(spawns[0]);
