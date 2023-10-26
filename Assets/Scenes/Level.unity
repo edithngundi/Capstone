@@ -1142,7 +1142,7 @@ Transform:
   m_GameObject: {fileID: 1752651463}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 30}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1160,8 +1160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4679dccc98f344090a2c74a71b1acee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _InitialVelocity: 100
-  _Angle: 45
+  _InitialVelocity: 30
+  _ZXAngle: 90
+  _ZYAngle: 85
 --- !u!1 &1858956872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,9 +1214,12 @@ MonoBehaviour:
   - {fileID: 1569135318803398142, guid: 3e7188cf3eb1b4873a5d02e607ff3889, type: 3}
   - {fileID: 3109933515425470563, guid: e0d58332be8a74c15916ef0ba0ea4318, type: 3}
   - {fileID: 2952622855331750776, guid: 2b4284d9c83cc4a8b90e7022b39c2b1c, type: 3}
+  - {fileID: 4783966848891638326, guid: a197054930181456499828e5e9ea0324, type: 3}
+  - {fileID: 6206316851902573019, guid: 648ef43c5c2404bf6988ed5960dd8fd2, type: 3}
+  - {fileID: 1849506259415772044, guid: 8a74cef1edbdc491b83deb0149dd2667, type: 3}
   spawnPosition: 0
   tileLength: 30
-  numberOfTiles: 4
+  numberOfTiles: 8
   playerTransform: {fileID: 987714558}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

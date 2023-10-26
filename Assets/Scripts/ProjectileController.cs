@@ -2,18 +2,30 @@ using System.Collections;
 using System.Collections.Generic; 
 using UnityEngine; 
  
-public class Projectile : MonoBehaviour 
+public class ProjectileController : MonoBehaviour 
 { 
     [SerializeField] float _InitialVelocity; 
-    [SerializeField] float _Angle; 
+    [SerializeField] float _ZXAngle; 
+
+    [SerializeField] float _ZYAngle; 
 
     GameObject cube;
+
+    GameObject projectile;
 
     private Vector3 targetPosition;
     private bool isMoving;
 
     private void Update()
     {
+        // Get the position of the camera
+        Vector3 cameraPosition = Camera.main.transform.position;
+
+        // Set the position of the projectile to be directly under the camera
+        float distanceBelowCamera = 1; // adjust this value to change the distance below the camera
+        Vector3 projectilePosition = new Vector3(cameraPosition.x, cameraPosition.y - distanceBelowCamera, cameraPosition.z);
+        transform.position = projectilePosition;
+
         // Check if the left mouse button was clicked
         if (Input.GetMouseButtonDown(0))
         {
@@ -29,7 +41,7 @@ public class Projectile : MonoBehaviour
             if (transform.position == targetPosition)
             {
                 // Destroy the projectile
-                Destroy(gameObject);
+                Destroy(projectile);
             }
         } 
     }
@@ -47,11 +59,11 @@ public class Projectile : MonoBehaviour
             StopAllCoroutines();
 
             // Start the coroutine to simulate the projectile motion
-            StartCoroutine(Coroutine_Movement(_InitialVelocity, _Angle * Mathf.Deg2Rad));
+            StartCoroutine(Coroutine_Movement(_InitialVelocity, _ZXAngle * Mathf.Deg2Rad, _ZYAngle * Mathf.Deg2Rad));
         }
     }
 
-    IEnumerator Coroutine_Movement(float initialVelocity, float angle) 
+    IEnumerator Coroutine_Movement(float initialVelocity, float ZXangle, float ZYangle) 
     { 
         // Time 
         float time = 0; 
@@ -63,9 +75,10 @@ public class Projectile : MonoBehaviour
         while (transform.position != targetPosition) 
         { 
             // Implement project motion physics formulas 
-            float x = initialPosition.x + 0; 
-            float y = initialPosition.y + initialVelocity * time * Mathf.Cos(angle); 
-            float z = initialPosition.z + initialVelocity * time * Mathf.Sin(angle) - (1f / 2f) * Physics.gravity.z * Mathf.Pow(time, 2); 
+        
+            float x = initialPosition.x + initialVelocity * time * Mathf.Cos(ZXangle);
+            float y = initialPosition.y + initialVelocity * time * Mathf.Cos(ZYangle); 
+            float z = initialPosition.z + initialVelocity * time * Mathf.Sin(ZXangle) - (1f / 2f) * Physics.gravity.y * Mathf.Pow(time, 2); 
             // Set new position of object 
             transform.position = new Vector3(x, y, z); 
  
@@ -73,7 +86,7 @@ public class Projectile : MonoBehaviour
             yield return null; 
         }
 
-        // Destroy the projectile
+        // Destroy the target
         Destroy(cube); 
-    } 
+    }     
 }

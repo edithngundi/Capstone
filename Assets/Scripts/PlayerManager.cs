@@ -25,6 +25,8 @@ public class PlayerManager : MonoBehaviour
     //public Text coinsText;
     public TextMeshProUGUI coinsCollectedText;
 
+    private int previousCoinsCollected;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         // Update the coins text with the coins collected
-        // coinsCollectedText.text = "Coins:" + coinsCollected;        
+       coinsCollectedText.text = "Coins:" + coinsCollected;
+      
     }
 }
