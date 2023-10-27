@@ -523,13 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d263d67f5c1cd40c991058a46df23ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePefabs:
-  - {fileID: 2815714844016719998, guid: 147b979bedef24468beda5d5d68a8122, type: 3}
-  - {fileID: 6981142228226367794, guid: 9ff16b7023c9f44c0ab33e93548f1288, type: 3}
-  - {fileID: 5541929372528085974, guid: a7414ca15eaf342ccb7f3bfdad818b52, type: 3}
-  - {fileID: 2640017767411457978, guid: 86c1a456084cb496fa3a6a36d5773fa5, type: 3}
-  - {fileID: 6693693135801343277, guid: 21388e0bcb0754e499dd87d837dc25c0, type: 3}
-  - {fileID: 2664808436766731847, guid: 30c3e555310124aec81d19b006665689, type: 3}
+  tilePrefabs: []
   spawnPosition: 0
   tileLength: 30
   numberOfTiles: 6
@@ -632,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978a234c34614198b4dd8ff22eb28ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  racingSpeed: 20
+  racingSpeed: 15
   distanceBetween: 2.5
   upwardJumpForce: 10
   gravity: -20
@@ -1058,14 +1052,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d263d67f5c1cd40c991058a46df23ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePefabs:
-  - {fileID: 5600701096214862843, guid: 70ee17d63e4df42a29e8af51d5431d26, type: 3}
+  tilePrefabs:
+  - {fileID: 4426046993937088928, guid: 70ee17d63e4df42a29e8af51d5431d26, type: 3}
   - {fileID: 4143538559310669497, guid: 5de29d1b088eb427391d0deb73ffabf0, type: 3}
-  - {fileID: 8758166984157424893, guid: 3df2a4dea6c4f42a6928b6d2ee1236cf, type: 3}
-  - {fileID: 1569135318803398142, guid: 3e7188cf3eb1b4873a5d02e607ff3889, type: 3}
-  - {fileID: 3109933515425470563, guid: e0d58332be8a74c15916ef0ba0ea4318, type: 3}
-  - {fileID: 2952622855331750776, guid: 2b4284d9c83cc4a8b90e7022b39c2b1c, type: 3}
+  - {fileID: 5825635131305714294, guid: 3df2a4dea6c4f42a6928b6d2ee1236cf, type: 3}
+  - {fileID: 1233936473011029021, guid: 3e7188cf3eb1b4873a5d02e607ff3889, type: 3}
   - {fileID: 2928223165974839437, guid: 492f7254de8fc4fad81134bda4635e47, type: 3}
+  - {fileID: 1737097319221615488, guid: 2b4284d9c83cc4a8b90e7022b39c2b1c, type: 3}
+  - {fileID: 4369910510116276552, guid: 03a2509a61f424651ab3b2e28d1b60fd, type: 3}
   spawnPosition: 0
   tileLength: 30
   numberOfTiles: 4

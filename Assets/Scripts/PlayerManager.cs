@@ -36,6 +36,6 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         // Update the coins text with the coins collected
-        // coinsCollectedText.text = "Coins:" + coinsCollected;        
+        coinsCollectedText.text = "Coins:" + coinsCollected;        
     }
 }
