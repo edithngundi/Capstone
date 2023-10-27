@@ -6,8 +6,6 @@ public class Projectile : MonoBehaviour
 { 
     [SerializeField] float initialVelocity; 
 
-    GameObject cube;
-
     GameObject projectile;
 
     private Vector3 targetPosition;

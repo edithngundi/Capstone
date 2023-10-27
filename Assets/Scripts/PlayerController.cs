@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     // Defines the character's forward racing speed
     public float racingSpeed;
+    // Defines the character's maximum speed
+    private float maximumSpeed = 30;
 
     // Defines the position of the track: 0 Left, 1 Middle, 2 Right
     private int positionOnTrack = 1;
@@ -38,6 +40,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Update()
     {
+        // Increases the player's speed linearly
+        if (racingSpeed < maximumSpeed)
+            racingSpeed += Time.deltaTime * 0.1f;
         // Sets player's speed
         movementDirection.z = racingSpeed;
 
