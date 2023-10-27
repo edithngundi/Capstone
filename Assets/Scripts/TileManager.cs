@@ -5,7 +5,7 @@ using UnityEngine;
 public class TileManager : MonoBehaviour
 {
     // List of the different types of tiles
-    public GameObject[] tilePefabs;
+    public GameObject[] tilePrefabs;
 
     // Defines the z-position where the tiles are spawned
     public float spawnPosition = 0;
@@ -25,20 +25,36 @@ public class TileManager : MonoBehaviour
     // Defines a buffer distance to prevent the player from falling off at the start 
     private int buffer = 35;
 
+    // initialize to an invalid index
+    private int previousTileIndex; 
+    private int tileIndex;
+
     /// <summary>
     /// This method is called when the game starts before the first frame update
     /// </summary>
     void Start()
     {
-        // Generate the tiles
+        int previousTileIndex = -1;
         for(int tile = 0; tile < numberOfTiles; tile++)
         {
-            // Instantiate Tile1 at start
             if (tile == 0)
-                TileSpawner(0);
-            // Choose at random
+                tileIndex = 0;
             else
-                TileSpawner(Random.Range(0, tilePefabs.Length));
+            {
+                do
+                {
+                    tileIndex = Random.Range(0, tilePrefabs.Length);
+                    if (tileIndex == previousTileIndex)
+                    {
+                        if (tileIndex == 0)
+                            tileIndex++;
+                        else
+                            tileIndex--;
+                    }
+                } while (tileIndex == previousTileIndex);
+            }
+            TileSpawner(tileIndex);
+            previousTileIndex = tileIndex;
         }
     }
 
@@ -50,7 +66,7 @@ public class TileManager : MonoBehaviour
         // Checks if the player has moved far enough to warrant spawning new tiles
         if (playerTransform.position.z - buffer > spawnPosition - (numberOfTiles * tileLength))
         {
-            TileSpawner(Random.Range(0, tilePefabs.Length));
+            TileSpawner(Random.Range(0, tilePrefabs.Length));
             // Delete stale tiles
             DeleteTile();
         }       
@@ -62,7 +78,7 @@ public class TileManager : MonoBehaviour
     public void TileSpawner(int tileIndex)
     {
         // Spawn the road tiles
-        GameObject spawn = Instantiate(tilePefabs[tileIndex], transform.forward * spawnPosition, transform.rotation);
+        GameObject spawn = Instantiate(tilePrefabs[tileIndex], transform.forward * spawnPosition, transform.rotation);
         // Add them to the list of spawned tiles
         spawns.Add(spawn);
         // Ensure the next tile is spawned near the previous one
