@@ -117,4 +117,14 @@ public class PlayerController : MonoBehaviour
         characterController.Move(movementDirection * Time.fixedDeltaTime);
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // If the player hits an obstacle
+        if(hit.transform.tag == "Obstacle" || hit.transform.tag == "Moving Obstacle")
+        {
+            // Set the game over condition to true
+            PlayerManager.gameOver = true;
+        }
+    }
+
 }

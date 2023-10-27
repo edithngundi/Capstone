@@ -28,6 +28,10 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Start the game
+        gameOver = false;
+        Time.timeScale = 1;
+
         coinsCollected = 0;
         
     }
@@ -35,6 +39,13 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameOver)
+        {
+            // Stop the game
+            Time.timeScale = 0;
+            // Show the game over panel
+            gameOverPanel.SetActive(true);
+        }
         // Update the coins text with the coins collected
         coinsCollectedText.text = "Coins:" + coinsCollected;        
     }
