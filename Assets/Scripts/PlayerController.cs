@@ -27,6 +27,11 @@ public class PlayerController : MonoBehaviour
     // Defines the gravity on the player
     public float gravity = -20;
 
+    // Defines the box colliders for the capsule
+    private BoxCollider boxColliderX;
+    private BoxCollider boxColliderY;
+
+
     /// <summary>
     /// This method is called when the game starts before the first frame update
     /// </summary>
@@ -40,7 +45,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Update()
     {
-        // Increases the player's speed linearly
+        // Increasing player's speed
         if (racingSpeed < maximumSpeed)
             racingSpeed += Time.deltaTime * 0.1f;
         // Sets player's speed
@@ -55,6 +60,11 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 CharacterJump();
+            }
+            // Movement down
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                StartCoroutine(Roll());
             }
         }
         else
@@ -102,6 +112,39 @@ public class PlayerController : MonoBehaviour
         else
             characterController.Move(difference);
 
+    }
+
+    IEnumerator Roll()
+    {
+        Quaternion originalRotation = transform.rotation;
+        Quaternion targetRotation = originalRotation * Quaternion.Euler(0, 0, -90);
+
+        transform.rotation = targetRotation;
+        if (transform.rotation == targetRotation)
+        {
+            // Turn off Y-axis capsule collider
+            GetComponent<CapsuleCollider>().direction = 1;
+            GetComponent<CapsuleCollider>().enabled = false;
+
+            // Turn on X-axis capsule collider
+            GetComponent<CapsuleCollider>().direction = 0;
+            GetComponent<CapsuleCollider>().enabled = true;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        transform.rotation = originalRotation;
+        if (transform.rotation == originalRotation)
+        {
+            // Turn off X-axis capsule collider
+            GetComponent<CapsuleCollider>().direction = 0;
+            GetComponent<CapsuleCollider>().enabled = false;
+
+            // Turn on Y-axis capsule collider
+            GetComponent<CapsuleCollider>().direction = 1;
+            GetComponent<CapsuleCollider>().enabled = true;
+    
+        }
     }
 
     /// <summary>
