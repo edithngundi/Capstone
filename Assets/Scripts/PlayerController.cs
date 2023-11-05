@@ -45,6 +45,10 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Update()
     {
+        // If the game is not started, do not move the player
+        if (!PlayerManager.isGameStarted)
+            return;
+
         // Increasing player's speed
         if (racingSpeed < maximumSpeed)
             racingSpeed += Time.deltaTime * 0.1f;
@@ -119,6 +123,9 @@ public class PlayerController : MonoBehaviour
         Quaternion originalRotation = transform.rotation;
         Quaternion targetRotation = originalRotation * Quaternion.Euler(0, 0, -90);
 
+        Debug.Log(positionOnTrack);
+
+
         transform.rotation = targetRotation;
         if (transform.rotation == targetRotation)
         {
@@ -143,8 +150,8 @@ public class PlayerController : MonoBehaviour
             // Turn on Y-axis capsule collider
             GetComponent<CapsuleCollider>().direction = 1;
             GetComponent<CapsuleCollider>().enabled = true;
-    
         }
+    
     }
 
     /// <summary>
@@ -153,6 +160,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
+        // If the game is not started, do not move the player
+        if (!PlayerManager.isGameStarted)
+            return;
+        
+        // Move the player
         characterController.Move(movementDirection * Time.fixedDeltaTime);
     }
 

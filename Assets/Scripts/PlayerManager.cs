@@ -32,6 +32,8 @@ public class PlayerManager : MonoBehaviour
         gameOver = false;
         Time.timeScale = 1;
 
+        isGameStarted = false;
+
         coinsCollected = 0;
         
     }
@@ -46,6 +48,14 @@ public class PlayerManager : MonoBehaviour
             // Show the game over panel
             gameOverPanel.SetActive(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isGameStarted = true;
+            // Hide the starting text
+            startingText.SetActive(false);
+        }
+
         // Update the coins text with the coins collected
         coinsCollectedText.text = "Coins:" + coinsCollected;        
     }
