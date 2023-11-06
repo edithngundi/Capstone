@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 969925140}
-  startingText: {fileID: 0}
+  startingText: {fileID: 1794481312}
   coinsCollectedText: {fileID: 1617977502}
 --- !u!1 &8488517651733760903
 GameObject:
