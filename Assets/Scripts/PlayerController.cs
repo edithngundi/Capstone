@@ -177,11 +177,17 @@ public class PlayerController : MonoBehaviour
         characterController.Move(movementDirection * Time.fixedDeltaTime);
     }
 
+    // Reference to camera shake
+    [SerializeField] private CameraShake cameraShake;
+    [SerializeField] private float shakeIntensity;
+    [SerializeField] private float shakeDuration;
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         // If the player hits an obstacle
         if(hit.transform.tag == "Obstacle" || hit.transform.tag == "Moving Obstacle")
         {
+            // Shake the camera
+            cameraShake.Shake(shakeIntensity, shakeDuration);
             // Set the game over condition to true
             PlayerManager.gameOver = true;
         }

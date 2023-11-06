@@ -9,9 +9,6 @@ public class PlayerManager : MonoBehaviour
     // Defines the game stop condition
     public static bool gameOver;
 
-    // Defines the game over panel
-    public GameObject gameOverPanel;
-
     // Defines the game start condition
     public static bool isGameStarted;
 
@@ -24,6 +21,9 @@ public class PlayerManager : MonoBehaviour
     // Defines the coins collected text
     //public Text coinsText;
     public TextMeshProUGUI coinsCollectedText;
+
+    // Defines the events script
+    public Events events;
 
     // Start is called before the first frame update
     void Start()
@@ -43,10 +43,10 @@ public class PlayerManager : MonoBehaviour
     {
         if (gameOver)
         {
-            // Stop the game
-            Time.timeScale = 0;
-            // Show the game over panel
-            gameOverPanel.SetActive(true);
+            // Set the game over condition to true
+            gameOver = true;
+            events.GameOver();
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -59,4 +59,5 @@ public class PlayerManager : MonoBehaviour
         // Update the coins text with the coins collected
         coinsCollectedText.text = "Coins:" + coinsCollected;        
     }
+
 }

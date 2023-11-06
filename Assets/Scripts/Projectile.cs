@@ -21,10 +21,12 @@ public class Projectile : MonoBehaviour
         // Get the position of the camera
         Vector3 cameraPosition = Camera.main.transform.position;
 
-        transform.position = projectilePosition;
-
-        // Set the position of the projectile to be under the camera
-        projectilePosition = new Vector3(cameraPosition.x, cameraPosition.y - 4, cameraPosition.z);
+        // Set the position of the projectile to be under the camera only if it's not moving
+        if (!isMoving)
+        {
+            projectilePosition = new Vector3(cameraPosition.x, cameraPosition.y - 4, cameraPosition.z);
+            transform.position = projectilePosition;
+        }
 
         // Check if the left mouse button was clicked
         if (Input.GetMouseButtonDown(0))
@@ -36,6 +38,7 @@ public class Projectile : MonoBehaviour
         {
             // Move the projectile towards the target position
             projectilePosition = Vector3.MoveTowards(transform.position, targetPosition, initialVelocity * Time.deltaTime);
+            transform.position = projectilePosition;
         } 
     }
  
