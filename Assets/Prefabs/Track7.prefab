@@ -83,7 +83,7 @@ Transform:
   m_GameObject: {fileID: 1935143609349585343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: -1}
   m_LocalScale: {x: 10, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -385,6 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &2289618515930710151
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &2928905088155438054
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &3193820361765774944
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &3336652141332348223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &4369910510116276552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1205,7 @@ Transform:
   m_GameObject: {fileID: 6630552011325521707}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 1, z: -1}
+  m_LocalPosition: {x: -3.5, y: 1, z: -2}
   m_LocalScale: {x: 2, y: 3.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1502,6 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &9181553399909848454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,3 +1628,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
