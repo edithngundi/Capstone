@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &1099522322095169018
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &1679224680153242938
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &2498748209384541546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,6 +1898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &8233789009963230975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,6 +2124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &9011655654150897097
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,6 +2245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77737e90f11c940faa4482040ad4e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
 --- !u!1 &9196113961086472050
 GameObject:
   m_ObjectHideFlags: 0

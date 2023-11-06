@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    // Add a variable to store the coin sound
+    public AudioClip coinSound;
+    private float volume = 3.0f;
     // Update is called once per frame
     void Update()
     {
@@ -19,6 +16,8 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Play the coin sound
+        AudioSource.PlayClipAtPoint(coinSound, transform.position, volume);
         // If the collider is the player
         if(other.tag == "Player")
         {
