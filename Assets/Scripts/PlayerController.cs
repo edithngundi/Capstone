@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
     private BoxCollider boxColliderX;
     private BoxCollider boxColliderY;
 
+    // Add a variable to store the jump sound
+    public AudioClip jumpSound;
+    // Add a variable to store the land sound
+    public AudioClip landSound;
+    private float volume = 1.0f;
 
     /// <summary>
     /// This method is called when the game starts before the first frame update
@@ -63,6 +68,8 @@ public class PlayerController : MonoBehaviour
             // Movement up
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                // Play the jump sound
+                AudioSource.PlayClipAtPoint(jumpSound, transform.position, volume);
                 CharacterJump();
             }
             // Movement down
@@ -73,8 +80,19 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            // Movement down
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                // Play the land sound
+                AudioSource.PlayClipAtPoint(landSound, transform.position, volume);
+                CharacterFall();
+            }
+            else
+            {
             // Player is affected by gravity
             movementDirection.y += gravity * Time.deltaTime;
+            }
+        
         }
 
         // Movement to the right
@@ -174,6 +192,12 @@ public class PlayerController : MonoBehaviour
     private void CharacterJump()
     {
         movementDirection.y  = upwardJumpForce;
+        characterController.Move(movementDirection * Time.fixedDeltaTime);
+    }
+
+    private void CharacterFall()
+    {
+        movementDirection.y  = -upwardJumpForce;
         characterController.Move(movementDirection * Time.fixedDeltaTime);
     }
 
