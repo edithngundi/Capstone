@@ -2028,7 +2028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978a234c34614198b4dd8ff22eb28ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  racingSpeed: 15
+  racingSpeed: 20
   distanceBetween: 2.5
   upwardJumpForce: 10
   gravity: -20

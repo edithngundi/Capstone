@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
         // Increasing player's speed
         if (racingSpeed < maximumSpeed)
-            racingSpeed += Time.deltaTime * 0.1f;
+            racingSpeed += Time.deltaTime * 0.2f;
         // Sets player's speed
         movementDirection.z = racingSpeed;
 
