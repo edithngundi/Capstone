@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     // Add a variable to store the land sound
     public AudioClip landSound;
+    // Add a variable to store the swerve sound
+    public AudioClip swerveSound;
     private float volume = 1.0f;
 
     /// <summary>
@@ -98,6 +100,8 @@ public class PlayerController : MonoBehaviour
         // Movement to the right
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            // Play the swerve sound
+            AudioSource.PlayClipAtPoint(swerveSound, transform.position, volume);
             positionOnTrack++;
             if (positionOnTrack == 3)
                 positionOnTrack = 2;
@@ -105,6 +109,8 @@ public class PlayerController : MonoBehaviour
         // Movement to the left
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            // Play the swerve sound
+            AudioSource.PlayClipAtPoint(swerveSound, transform.position, volume);
             positionOnTrack--;
             if (positionOnTrack == -1)
                 positionOnTrack = 0;
