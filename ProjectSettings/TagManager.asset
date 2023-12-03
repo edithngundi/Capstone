@@ -9,6 +9,7 @@ TagManager:
   - Moving Obstacle
   - MagneticCoin
   - MagnetPowerup
+  - HasMagneticCoins
   layers:
   - Default
   - TransparentFX
