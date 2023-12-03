@@ -29,32 +29,18 @@ public class TileManager : MonoBehaviour
     private int previousTileIndex; 
     private int tileIndex;
 
+
     /// <summary>
     /// This method is called when the game starts before the first frame update
     /// </summary>
     void Start()
     {
-        int previousTileIndex = -1;
         for(int tile = 0; tile < numberOfTiles; tile++)
         {
             if (tile == 0)
-                tileIndex = 0;
+                TileSpawner(0);
             else
-            {
-                do
-                {
-                    tileIndex = Random.Range(0, tilePrefabs.Length);
-                    if (tileIndex == previousTileIndex)
-                    {
-                        if (tileIndex == 0)
-                            tileIndex++;
-                        else
-                            tileIndex--;
-                    }
-                } while (tileIndex == previousTileIndex);
-            }
-            TileSpawner(tileIndex);
-            previousTileIndex = tileIndex;
+                TileSpawner(Random.Range(0, tilePrefabs.Length));
         }
     }
 
