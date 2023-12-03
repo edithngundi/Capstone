@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-     // Controls the character's movement
+    // Controls the character's movement
     private CharacterController characterController;
 
     // Defines the character's direction
@@ -35,8 +35,29 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     // Add a variable to store the land sound
     public AudioClip landSound;
+    // Add a variable to store the swerve sound
+    public AudioClip swerveSound;
     private float volume = 1.0f;
 
+    // Player's position
+    public Transform player;
+
+    // Variables to activate the magnetic powerup
+    public float playerPosX;
+    public float playerPosY;
+    public float playerPosZ;
+
+    public static PlayerController instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+        instance = this;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     /// <summary>
     /// This method is called when the game starts before the first frame update
     /// </summary>
@@ -50,13 +71,18 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Update()
     {
+        // Get player's position
+        playerPosX = player.position.x;
+        playerPosY = player.position.y;
+        playerPosZ = player.position.z;
+
         // If the game is not started, do not move the player
         if (!PlayerManager.isGameStarted)
             return;
 
         // Increasing player's speed
         if (racingSpeed < maximumSpeed)
-            racingSpeed += Time.deltaTime * 0.1f;
+            racingSpeed += Time.deltaTime * 0.2f;
         // Sets player's speed
         movementDirection.z = racingSpeed;
 
@@ -98,6 +124,8 @@ public class PlayerController : MonoBehaviour
         // Movement to the right
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            // Play the swerve sound
+            AudioSource.PlayClipAtPoint(swerveSound, transform.position, volume);
             positionOnTrack++;
             if (positionOnTrack == 3)
                 positionOnTrack = 2;
@@ -105,6 +133,8 @@ public class PlayerController : MonoBehaviour
         // Movement to the left
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            // Play the swerve sound
+            AudioSource.PlayClipAtPoint(swerveSound, transform.position, volume);
             positionOnTrack--;
             if (positionOnTrack == -1)
                 positionOnTrack = 0;
@@ -133,7 +163,6 @@ public class PlayerController : MonoBehaviour
             characterController.Move(direction);
         else
             characterController.Move(difference);
-
     }
 
     IEnumerator Roll()

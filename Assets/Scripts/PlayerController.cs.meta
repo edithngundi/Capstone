@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - jumpSound: {fileID: 8300000, guid: 937305209cd324946b7b8a5a343d105c, type: 3}
   - landSound: {fileID: 8300000, guid: e49b92e1b29e24de0895fd24474e5616, type: 3}
+  - swerveSound: {fileID: 8300000, guid: cabaf7c139c17495abcbf377232c4165, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

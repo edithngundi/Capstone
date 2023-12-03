@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class CoinController : MonoBehaviour
 {
     // Add a variable to store the coin sound
     public AudioClip coinSound;
     private float volume = 1.0f;
     // Update is called once per frame
+
     void Update()
     {
         // Rotate the coin along the x-axis

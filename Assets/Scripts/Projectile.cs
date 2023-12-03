@@ -16,6 +16,10 @@ public class Projectile : MonoBehaviour
 
     private float normalizer;
 
+    // Add a variable to store the burst sound
+    public AudioClip burstSound;
+    private float volume = 1.0f;
+
     private void Update()
     {
         // Get the position of the camera
@@ -90,6 +94,8 @@ public class Projectile : MonoBehaviour
             {
                 if (hitCollider.gameObject.CompareTag("Moving Obstacle"))
                 {
+                    // Play the explosion sound
+                    AudioSource.PlayClipAtPoint(burstSound, transform.position, volume);
                     // Destroy the hit object
                     Destroy(hitCollider.gameObject);
 
