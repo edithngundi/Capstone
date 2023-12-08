@@ -14,7 +14,7 @@ public class MagneticCoinController : MonoBehaviour
 
     private GameObject player;
 
-    private float speed = 10.0f;
+    //private float speed = 10.0f;
 
     private int magnetRange = 30;
 
@@ -42,7 +42,7 @@ public class MagneticCoinController : MonoBehaviour
             float distance = Vector3.Distance(transform.position, playerPosition);
             if (distance <= magnetRange)
             {
-                transform.position = Vector3.Lerp(transform.position, playerPosition, speed * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, playerPosition, racingSpeed * Time.deltaTime);
             }
             else
             {
