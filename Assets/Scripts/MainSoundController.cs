@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class MainSoundController : MonoBehaviour
 {
-    public Events events;
+   public static MainSoundController instance = null;
+
     void Awake()
     {
-        if (events.isGameRestartCalled == true)
+        if (instance == null)
         {
+            instance = this;
             DontDestroyOnLoad(transform.gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
         }
     }
 }

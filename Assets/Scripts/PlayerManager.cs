@@ -57,6 +57,6 @@ public class PlayerManager : MonoBehaviour
         }
 
         // Update the coins text with the coins collected
-        coinsCollectedText.text = "Coins:" + coinsCollected;        
+        coinsCollectedText.text = " " + coinsCollected;        
     }
 }
