@@ -712,8 +712,6 @@ MonoBehaviour:
   isQuitGameCalled: 0
   isGameOverCalled: 0
   isGameRestartCalled: 0
-  loseSound: {fileID: 8300000, guid: 1fc4b26b480d447b78f88da070060373, type: 3}
-  winSound: {fileID: 8300000, guid: 53680e66758c24056a2cd6194c447e06, type: 3}
   timer: 3
 --- !u!4 &573788797
 Transform:
@@ -1366,7 +1364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -20}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1617977502
