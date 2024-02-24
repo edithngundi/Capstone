@@ -13,7 +13,7 @@ public class ScoreMenu : MonoBehaviour
             scoreManager.scoreText = this.scoreText; 
             scoreManager.UpdateScoreText(); 
         } else {
-            Debug.LogWarning("ScoreManager is not found in the scene.");
+            Debug.LogWarning("No ScoreManager object");
         }
     }
 }
