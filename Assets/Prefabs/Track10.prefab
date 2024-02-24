@@ -463,7 +463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &1563005396759919390
 GameObject:
@@ -718,7 +717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &1744043479117232959
 GameObject:
@@ -868,7 +866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &1827084257694580363
 GameObject:
@@ -1123,7 +1120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &1969392147313661096
 GameObject:
@@ -1273,7 +1269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &1976007593252550036
 GameObject:
@@ -1528,7 +1523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &2110511697223820208
 GameObject:
@@ -1678,7 +1672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &2147505630970907334
 GameObject:
@@ -1828,7 +1821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &2171807690767435331
 GameObject:
@@ -1978,7 +1970,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &2317022138462101016
 GameObject:
@@ -2338,7 +2329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &3436803594602608408
 GameObject:
@@ -2488,7 +2478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &3608200812019772448
 GameObject:
@@ -2743,7 +2732,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &4010834641791748966
 GameObject:
@@ -2893,7 +2881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &4171864991768340048
 GameObject:
@@ -3390,7 +3377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &4946009220924362229
 GameObject:
@@ -3615,7 +3601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &5007525617730191983
 GameObject:
@@ -3765,7 +3750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &5244472164033077871
 GameObject:
@@ -4730,7 +4714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &6983022089663123642
 GameObject:
@@ -5122,7 +5105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73765c12a13b7430d8bad1c66c58963e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: b751ecc437a9149bbbadf6b8e611f76a, type: 3}
   isActive: 0
 --- !u!1 &8050459475820635706
 GameObject:
@@ -5343,7 +5325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1ea259578af4fe2b9ed3502508868f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetSound: {fileID: 8300000, guid: 75e59ddea962a46a0b1aba1a7eb11d5c, type: 3}
+  magnetSound: {fileID: 8300000, guid: c8ee165990f9940fd9691db0cbcfba9f, type: 3}
   rotationSpeed: 50
 --- !u!54 &4432186584860428663
 Rigidbody:
