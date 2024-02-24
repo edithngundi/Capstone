@@ -8,8 +8,6 @@ public class Events : MonoBehaviour
      // Defines the game over panel
     public GameObject gameOverPanel;
 
-    // Add a flag to check if QuitGame was called
-    public bool isQuitGameCalled = false;
     // Add a flag to check if GameOver was called
     public bool isGameOverCalled = false;
     // Add a flag to check if RestartGame was called
@@ -22,11 +20,9 @@ public class Events : MonoBehaviour
         SceneManager.LoadScene("Level");
     }
 
-    public void QuitGame()
+    public void GoToMainMenu()
     {
-        isQuitGameCalled = true;
-        // Quit the game
-        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public float timer = 3f;

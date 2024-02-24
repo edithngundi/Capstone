@@ -31,11 +31,8 @@ public class PlayerManager : MonoBehaviour
         // Start the game
         gameOver = false;
         Time.timeScale = 1;
-
         isGameStarted = false;
-
-        coinsCollected = 0;
-        
+        coinsCollected = 0; 
     }
 
     // Update is called once per frame
