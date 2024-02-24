@@ -44,6 +44,16 @@ public class PlayerManager : MonoBehaviour
             Time.timeScale = 0;
             // Show the game over panel
             gameOverPanel.SetActive(true);
+            // check the high score
+            if (ScoreManager.Instance != null)
+            {
+                ScoreManager.Instance.CheckHighScore(coinsCollected);
+            }
+            else
+            {
+                Debug.LogWarning("ScoreManager instance not found.");
+            }
+            gameOver = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
