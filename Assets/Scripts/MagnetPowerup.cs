@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagnetPowerup : MonoBehaviour
 {
-    // Add a variable to store the magnet sound
+    // Add a variable to store the coins sound
     public AudioClip magnetSound;
     private float volume = 1.0f;
     public float rotationSpeed = 2.0f;
@@ -17,7 +17,7 @@ public class MagnetPowerup : MonoBehaviour
 
     private void OnTriggerEnter(Collider otherObject)
     {
-        // Play the coin sound
+        // Play the coins sound
         AudioSource.PlayClipAtPoint(magnetSound, transform.position, volume);
 
         GameObject magnetPowerup = GameObject.FindWithTag("MagnetPowerup");

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MagneticCoinController : MonoBehaviour
 {
-    // Add a variable to store the coin sound
-    public AudioClip coinSound;
-    private float volume = 1.0f;
 
     public bool isActive = false;
 
@@ -53,8 +50,6 @@ public class MagneticCoinController : MonoBehaviour
 
     private void OnTriggerEnter(Collider otherCollider)
     {
-        // Play the coin sound
-        AudioSource.PlayClipAtPoint(coinSound, transform.position, volume);
         // If the collider is the player
         if(otherCollider.tag == "Player")
         {

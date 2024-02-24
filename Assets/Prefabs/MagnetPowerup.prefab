@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1ea259578af4fe2b9ed3502508868f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetSound: {fileID: 8300000, guid: 75e59ddea962a46a0b1aba1a7eb11d5c, type: 3}
+  magnetSound: {fileID: 8300000, guid: c8ee165990f9940fd9691db0cbcfba9f, type: 3}
   rotationSpeed: 50
 --- !u!54 &7506054552357545134
 Rigidbody:
