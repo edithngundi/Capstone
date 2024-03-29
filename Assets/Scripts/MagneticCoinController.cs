@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class MagneticCoinController : MonoBehaviour
 {
-
+    // Check to determine if the coin is active
     public bool isActive = false;
-
+    // Set the speed of the coin
     private float racingSpeed;
-
+    // Reference to the player object
     private GameObject player;
-
-    //private float speed = 10.0f;
-
+    // Set the range of the magnet
     private int magnetRange = 30;
-
+    //  Set the speed of the coin
     public void SetSpeed(float newSpeed)
     {
+        // Set the speed of the coin
         racingSpeed = newSpeed;
     }
 
     void Start()
     {
+        // Set the speed of the coin
         player = GameObject.FindWithTag("Player");
     }
 
@@ -33,16 +33,22 @@ public class MagneticCoinController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Check if the coin is active
         if (isActive)
         {
+            // Set the position of the player
             Vector3 playerPosition = new Vector3(PlayerController.instance.playerPosX, PlayerController.instance.playerPosY, PlayerController.instance.playerPosZ);
+            // Calculate the distance between the coin and the player
             float distance = Vector3.Distance(transform.position, playerPosition);
+            // Check if the distance is less than the magnet range
             if (distance <= magnetRange)
             {
+                // Move the coin towards the player
                 transform.position = Vector3.Lerp(transform.position, playerPosition, racingSpeed * Time.deltaTime);
             }
             else
             {
+                // Set the coin to inactive
                 isActive = false;
             }          
         }

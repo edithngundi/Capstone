@@ -53,30 +53,31 @@ public class PlayerController : MonoBehaviour
     private float startYScale;
     private bool isCrouching = false;
 
+    // Singleton
     public static PlayerController instance;
 
     void Awake()
     {
+        // Singleton
         if (instance != null)
         {
+            // If there is another instance of the PlayerController, destroy it
             return;
         }
+        // Set the instance to this instance
         instance = this;
+        // Set the player to the player object
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    /// <summary>
-    /// This method is called when the game starts before the first frame update
-    /// </summary>
+    
     void Start()
     {
+        // Get the character controller component
         characterController = GetComponent<CharacterController>();
         // Save the normal y-scale of the player
         startYScale = transform.localScale.y;
     }
 
-    /// <summary>
-    /// This method is called once per frame
-    /// </summary>
     void Update()
     {
         // Get player's position
@@ -179,10 +180,6 @@ public class PlayerController : MonoBehaviour
             characterController.Move(difference);
     }
 
-    /// <summary>
-    /// This method is responsible for moving the player. 
-    /// Preferred to Update because it runs at a fixed rate/per delta time while Update runs per frame
-    /// </summary>
     private void FixedUpdate()
     {
         // If the game is not started, do not move the player
@@ -193,8 +190,10 @@ public class PlayerController : MonoBehaviour
         characterController.Move(movementDirection * Time.fixedDeltaTime);
     }
 
+    // Crouch coroutine
     IEnumerator Crouch()
     {
+        // Crouch the player
         while (transform.localScale.y > crouchYScale)
         {
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y - crouchSpeed, transform.localScale.z);
@@ -202,8 +201,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Stand up coroutine
     IEnumerator StandUp()
     {
+        // Stand up the player
         while (transform.localScale.y < startYScale)
         {
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + crouchSpeed, transform.localScale.z);
@@ -211,9 +212,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// This method makes the player jump
-    /// </summary>
+    // Jump function
     private void CharacterJump()
     {
         if (!isCrouching)
@@ -223,12 +222,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Fall function
     private void CharacterFall()
     {
         movementDirection.y  = -upwardJumpForce;
         characterController.Move(movementDirection * Time.fixedDeltaTime);
     }
 
+    // Collision detection
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         // If the player hits an obstacle

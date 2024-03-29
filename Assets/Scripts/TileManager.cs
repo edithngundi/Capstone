@@ -6,47 +6,37 @@ public class TileManager : MonoBehaviour
 {
     // List of the different types of tiles
     public GameObject[] tilePrefabs;
-
     // Defines the z-position where the tiles are spawned
     public float spawnPosition = 0;
-
     // Defines the length of the road tile
     public float tileLength = 30;
-
     // Defines the number of tile prefabs
     public int numberOfTiles = 6;
-
     // Defines the player's position
     public Transform playerTransform;
-
     // Defines the list of spawned tiles
     private List<GameObject> spawns = new List<GameObject>();
-
     // Defines a buffer distance to prevent the player from falling off at the start 
     private int buffer = 35;
-
-    // initialize to an invalid index
+    // Defines the previous tile index
     private int previousTileIndex; 
+    // Defines the current tile index
     private int tileIndex;
 
-
-    /// <summary>
-    /// This method is called when the game starts before the first frame update
-    /// </summary>
     void Start()
     {
+        // Generate the tiles
         for(int tile = 0; tile < numberOfTiles; tile++)
         {
+            // Instantiate Tile1 at start
             if (tile == 0)
                 TileSpawner(0);
             else
+                // Choose at random
                 TileSpawner(Random.Range(0, tilePrefabs.Length));
         }
     }
 
-     /// <summary>
-    /// This method is called once per frame
-    /// </summary>
     void Update()
     {
         // Checks if the player has moved far enough to warrant spawning new tiles
@@ -58,9 +48,6 @@ public class TileManager : MonoBehaviour
         }       
     }
 
-    /// <summary>
-    /// This method instantiates new tiles
-    /// </summary>
     public void TileSpawner(int tileIndex)
     {
         // Spawn the road tiles
@@ -71,9 +58,6 @@ public class TileManager : MonoBehaviour
         spawnPosition += tileLength;
     }
 
-    /// <summary>
-    /// This method deletes a tile
-    /// </summary>
     private void DeleteTile()
     {
         // Destroy and delete the tile at the first index of spawns

@@ -34,7 +34,9 @@ public class CubeController : MonoBehaviour
             movingRight = true;
         }
 
+        // Set the direction of the cube
         float direction;
+        
         if (movingRight)
         {
             // Set the direction of the cube to right
