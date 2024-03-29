@@ -7,15 +7,13 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        // Load the next scene in the build settings
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitGame()
     {
-    #if UNITY_WEBGL && !UNITY_EDITOR
-        Application.ExternalEval("window.close()");
-    #else
+        // Quit the application
         Application.Quit();
-    #endif
     }
 }

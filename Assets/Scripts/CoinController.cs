@@ -6,8 +6,8 @@ public class CoinController : MonoBehaviour
 {
     // Add a variable to store the coin sound
     public AudioClip coinSound;
+    // Add a variable to store the volume of the sound
     private float volume = 1.0f;
-    // Update is called once per frame
 
     void Update()
     {

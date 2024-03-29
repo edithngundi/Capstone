@@ -6,28 +6,19 @@ public class RoadTileManager : MonoBehaviour
 {
     // List of the different types of road tiles
     public GameObject[] roadTilePefabs;
-
     // Defines the z-position where the road tiles are spawned
     public float spawnPosition = 0;
-
     // Defines the length of the road tile
     public float roadTileLength = 30;
-
     // Defines the number of road tile prefabs
     public int numberOfRoadTiles = 6;
-
     // Defines the player's position
     public Transform playerTransform;
-
     // Defines the list of spawned tiles
     private List<GameObject> spawns = new List<GameObject>();
-
     // Defines a buffer distance to prevent the player from falling off at the start 
     private int buffer = 35;
 
-    /// <summary>
-    /// This method is called when the game starts before the first frame update
-    /// </summary>
     void Start()
     {
         // Generate the road tiles
@@ -42,23 +33,18 @@ public class RoadTileManager : MonoBehaviour
         }
     }
 
-     /// <summary>
-    /// This method is called once per frame
-    /// </summary>
     void Update()
     {
         // Checks if the player has moved far enough to warrant spawning new road tiles
         if (playerTransform.position.z - buffer > spawnPosition - (numberOfRoadTiles * roadTileLength))
         {
+            // Choose at random
             RoadTileSpawner(Random.Range(0, roadTilePefabs.Length));
             // Delete stale tiles
             DeleteRoadTile();
         }       
     }
 
-    /// <summary>
-    /// This method instantiates new road tiles
-    /// </summary>
     public void RoadTileSpawner(int roadTileIndex)
     {
         // Spawn the road tiles
@@ -69,9 +55,6 @@ public class RoadTileManager : MonoBehaviour
         spawnPosition += roadTileLength;
     }
 
-    /// <summary>
-    /// This method deletes a road tile
-    /// </summary>
     private void DeleteRoadTile()
     {
         // Destroy and delete the tile at the first index of spawns

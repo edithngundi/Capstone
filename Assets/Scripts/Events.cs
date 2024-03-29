@@ -15,6 +15,7 @@ public class Events : MonoBehaviour
 
     public void RestartGame()
     {
+        // Set the flag to true
         isGameRestartCalled = true;
         // Reload the current scene
         SceneManager.LoadScene("Level");
@@ -22,16 +23,21 @@ public class Events : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        // Load the main menu scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
+    // Add a timer to delay the game over condition
     public float timer = 3f;
+    // Add a flag to check if the game over condition was called
     public void GameOver()
     {
+        // Set the flag to true
         isGameOverCalled = true;
-
         // Start the timer
         timer -= 0.1f;
+        
+        // Check if the timer has reached zero
         if (timer <= 0)
         {
             // Set the game over condition to true
